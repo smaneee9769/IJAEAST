@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="shortcut icon" href="https://ijaeast.com/ijaeastlogo.png" type="image/x-icon" />
+  <meta https-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <title>IJAEAST</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://ijaeast.com/style.css" type="text/css">
+  <link rel="stylesheet" href="https://ijaeast.com/font.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script defer src="https://ijaeast.com/count.js"></script>
+  <style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Raleway", sans-serif
+    }
+
+    body,
+    html {
+      height: 100%;
+
+    }
+
+    /* Full height image header */
+    .bgimg-1 {
+      background-position: center;
+      background-size: cover;
+      background-image: url("/ijaimages/mac.jpg");
+      min-height: 100%;
+    }
+
+    .ija-bar .ija-button {
+      padding: 8px;
+    }
+
+    #vertical-line {
+      float: left;
+      height: 650px;
+      width: 1px;
+      background-color: black;
+    }
+
+    #harizondal-line {
+      float: left;
+      height: 1px;
+      width: 100%;
+      background-color: black;
+    }
+
+    .card {
+      padding: clamp(8px, 5vw, 16px);
+      margin-bottom: clamp(16px, 5vw, 32px);
+      background-color: #fff;
+    }
+
+    .card-actions {
+      position: relative;
+      margin-bottom: 16px;
+    }
+
+    img {
+      transform: scale3d(1, 1, 1);
+      transition: transform 1s ease-in-out;
+    }
+
+    img:hover {
+      transform: scale3d(1.5, 1.5, 1);
+      transition: transform 5s ease-in-out;
+    }
+
+    .imga {
+      transform: scale3d(1, 1, 1);
+      transition: transform 1s ease-in-out;
+    }
+
+    .imga:hover {
+      transform: scale3d(0, 0, 0);
+      transition: transform 0s ease-in-out;
+    }
+
+    .dropbtn {
+      background-color: #085f63;
+      color: white;
+      padding: 8px;
+      font-size: 16px;
+      border: none;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: relative;
+      background-color: #f1f1f1;
+      min-width: 120px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+      background-color: #49beb7;
+    }
+
+    .mybutton {
+      width: 200px;
+      height: 50px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar (sit on top) -->
+  <div class="ija-top">
+    <div class="ija-bar ija-yellow ija-card" id="myNavbar">
+      <img class="ija-hide-small" src="https://ijaeast.com/ijaeastlogo.png"
+        style="height: 100px;width: 100px;margin-left: 10px;">
+      <div class="ija-right ija-hide-small">
+        <img src="https://ijaeast.com/logo1.png" style="height: 100px;width: 100px;margin-left: 10px;">
+      </div>
+      <!-- Right-sided navbar links -->
+      <div class="ija-right ija-hide-small">
+        <b>
+          <a href="#home" class="ija-bar-item ija-button">Home</a>
+          <a href="#about" class="ija-bar-item ija-button">About Journal</a>
+          <a href="#index" class="ija-bar-item ija-button">Journal Indexing</a>
+          <a href="#guide" class="ija-bar-item ija-button">Author Guidelines</a>
+          <a href="#submission" class="ija-bar-item ija-button">Article Submission</a>
+          <a href="#editorial" class="ija-bar-item ija-button">Editorial Board</a>
+          <a href="#policy" class="ija-bar-item ija-button">Publication Policy</a>
+          <a href="#books" class="ija-bar-item ija-button">Books</a>
+          <a href="#contact" class="ija-bar-item ija-button">Contact Us</a>
+          <a href="#archives" class="ija-bar-item ija-button">Archives</a></b>
+      </div>
+
+      <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+      <a href="javascript:void(0)" class="ija-bar-item ija-button ija-right ija-hide-large ija-hide-medium"
+        onclick="ija_open()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Sidebar on small screens when clicking the menu icon -->
+  <nav class="ija-sidebar ija-bar-block ija-black ija-card ija-animate-left ija-hide-medium ija-hide-large"
+    style="display:none" id="mySidebar">
+    <a href="javascript:void(0)" onclick="ija_close()" class="ija-bar-item ija-button ija-large ija-padding-16">Close
+      ×</a>
+    <a href="#home" onclick="ija_close()" class="ija-bar-item ija-button">HOME</a>
+    <a href="#about" onclick="ija_close()" class="ija-bar-item ija-button">About Journal</a>
+    <a href="#index" onclick="ija_close()" class="ija-bar-item ija-button">Journal Indexing</a>
+    <a href="#guide" onclick="ija_close()" class="ija-bar-item ija-button">Author Guidelines</a>
+    <a href="#submission" onclick="ija_close()" class="ija-bar-item ija-button">Article Submission</a>
+    <a href="#editorial" onclick="ija_close()" class="ija-bar-item ija-button">Editorial Board</a>
+    <a href="#policy" onclick="ija_close()" class="ija-bar-item ija-button">Publication Policy</a>
+    <a href="#books" onclick="ija_close()" class="ija-bar-item ija-button">Books</a>
+    <a href="#contact" onclick="ija_close()" class="ija-bar-item ija-button">Contact Us</a>
+    <a href="#archives" onclick="ija_close()" class="ija-bar-item ija-button">Archives</a>
+  </nav>
+
+  <!-- Header with full-height image -->
+  <header class="ija-display-container" id="home">
+    <div class="ija-display-container" style="background-color: #085f63;">
+      <div style="padding:20px;text-align: center;">
+        <div style="margin-top: 10%;">
+          <span class="ija-jumbo ija-text-white ija-text-shadow"><b style="color: #facf5a;">IJAEAST</b></span><br>
+          <span class="ija-xxxlarge ija-hide-small ija-round-medium ija-text-white ija-text-shadow"><b
+              style="color: #facf5a;">INTERNATIONAL JOURNAL OF ADVANCES IN <br>ENGINEERING ARCHITECTURE SCIENCE AND
+              TECHNOLOGY</b></span><br>
+          <span class="ija-jumbo ija-text-white ija-text-shadow ija-center ija-hide-small">
+            <b style="font-family: 'Times New Roman', Times, serif;">ISSN : 2583-7346</b> </span>
+        </div><br>
+        <div class="ija-center ija-hide-small">
+          <a href="https://portal.issn.org/resource/ISSN/2583-7346" target="_blank"><img src="https://ijaeast.com/issn.jpg"
+              style="width: 10%;height: 10%;margin-right: 2%;"></a><a
+            href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://ijaeast.com/cc.png"
+              style="width: 10%;height: 10%;"></a>
+        </div>
+      </div>
+      <div class="ija-tag" style="width: 100%;margin-top: 10%;background-color: #facf5a;">
+        <marquee width="100%" direction="left" height="50px" style="color: #085f63;text-align: center;"><b>IJAEAST
+            Indexed with Google Scholar I CiteFactor I Research Gate I Digital Online Identifier I Internet Archieves I
+            Index Copernicus I OAJI I SIS I DRJI I DOAJ I Web of Science Researcher I ORCID I JournalTOCs I Academia I
+            EZB I Eurasian Scientific Journal Index I WorldCat I 1Library I Infobase Index I BASE I ASJR<br></b>
+        </marquee>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Container -->
+  <div class="ija-container ija-content" style="max-width:1400px;margin-top:10%">
+    <!-- The Grid -->
+    <div class="ija-row">
+      <!-- Left Column -->
+      <div class="ija-col m3">
+        <!-- Profile -->
+        <div class="ija-card ija-round ija-white">
+          <div class="ija-container">
+            <h4 class="ija-center">For Organizing International Conference</h4>
+            <hr>
+            <p style="text-align: center;">Contact<br>
+              <b> Dr. Adarsh T. K.</b><br>
+              Associate Editor in Chief, IJAEAST<br>
+              <i class="fa fa-mail-forward fa-fw ija-margin-right ija-text-theme"></i>adarshtk@gmail.com<br>
+              <i class="fa fa-mobile-phone fa-fw ija-margin-right ija-text-theme"></i>+91 9495142082
+            </p>
+          </div>
+        </div>
+        <br>
+
+        <!-- Left col Artical -->
+        <div class="ija-card ija-round ">
+          <h4 class="ija-center">Article</h4>
+          <div class="ija-white">
+            <a href="#submission" class="ija-bar-item ija-button">Article Submission</a><br>
+            <a href="https://ijaeast.com/Article_Template.docx" target="_blank" class="ija-bar-item ija-button">Article
+              Template</a><br>
+            <a href="https://www.ijaeast.com/CopyRightForm.pdf" target="_blank"
+              class="ija-bar-item ija-button">Copyright Form</a><br>
+            <a href="https://www.ijaeast.com/PublicationPolicy.pdf" target="_blank"
+              class="ija-bar-item ija-button">Publication Policy</a>
+          </div>
+        </div>
+        <br>
+
+        <!-- Interests -->
+        <div class="ija-card ija-round ija-white ija-hide-small">
+          <div class="ija-container">
+            <p>Research Gate Citation</p>
+            <a href="https://www.researchgate.net/profile/International-Journal-Of-Advances-In-Engineering-Architecture-Science-And-Technology"
+              target="_blank"><img src="https://ijaeast.com/plot.png" style="width: 100%;height: 100%;"></a>
+          </div>
+        </div>
+        <br>
+        <div class="ija-card ija-round ija-white ija-hide-small">
+          <div class="ija-container">
+            <p>Google Scholar Citation</p>
+            <a href="https://scholar.google.com/citations?user=NNVchRQAAAAJ&hl=en" target="_blank"><img
+                src="https://ijaeast.com/gcited.png" style="width: 100%;height: 100%;"></a>
+          </div>
+        </div>
+        <br>
+
+        <!-- End Left Column -->
+      </div>
+      <!-- Middle Column -->
+      <!--CURRENT ISSUE-->
+      <div class="ija-col m7">
+
+        <div class="ija-row-padding">
+          <div class="ija-col m12">
+            <div class="ija-card ija-round ija-white">
+              <div class="ija-container ija-padding  ija-yellow">
+                <h6 style="text-align: center;"><b>CURRENT ISSUE</b></h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Issue 1-->
+        <div class="ija-container ija-card ija-white ija-round ija-margin"><br>
+          <span class="ija-right ija-opacity">Volume - 1, Issue – 5, August 2023, Page No. 1-11</span>
+          <h4>Authors</h4>
+          <h6>Chetan Bagaria, R. Nirmala</h6><br>
+          <h4>Paper Title</h4>
+          <h6><a href="https://www.ijaeast.com/IJAEAST_0001082023.pdf" target="_blank" onclick="clickCounter()">Mindfulness and Sustainable Tourism
+              – An Integrative Review</a></h6>
+              <span class="ija-right ija-opacity">Views: <span id="post"></span></span><br>
+        </div>
+
+
+        <!-- End Middle Column -->
+      </div>
+
+      <!-- Right Column -->
+      <div class="ija-col m2">
+        <div class="ija-card ija-round ija-white ija-center">
+          <div class="ija-container">
+            <a href="#index">Journal Indexing</a>
+
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+
+      <!-- End Right Column -->
+    </div>
+
+    <!-- End Grid -->
+  </div>
+
+  <!-- End Page Container -->
+  </div>
+  <div class="ija-shadow" id="harizondal-line"></div>
+  <!-- ABOUT JOURNAL -->
+  <div class="ija-container" style="padding:128px 16px" id="about">
+    <h3 class="ija-center ija-yellow ija-hover-opacity">ABOUT JOURNAL</h3>
+    <p class="ija-center ija-large">Aim and Scope</p><br>
+    <p class="ija-justify">International Journal of Advances in Engineering Architecture Science and Technology is an
+      open-access journal publishing full-length research papers and review articles covering subjects that fall under
+      the wide spectrum of engineering, architecture science and technology. The journal is dedicated towards
+      dissemination of knowledge related to the advancement in scientific research. The prestigious interdisciplinary
+      editorial board reflects the diversity of subjects covered in this journal. Under the realm of science and
+      technology, the coverage includes engineering and technology, architecture and planning, environmental science,
+      pure and applied mathematics, agricultural research and engineering, biology, biotechnology, bioinformatics,
+      Healthcare sciences (including clinical medicine, preventive medicine & public health), physics, biophysics,
+      computer science, chemistry and bioengineering, Management Studies to name a few.</p>
+    <div class=" ija-left" style="margin-top:64px">
+      <div class="ija-quarter">
+        <p class="ija-large ija-center ija-yellow ija-hover-shadow" style="margin-left: 3px;margin-right: 3px;">
+          <b>Journal Particulars</b></p>
+        <table>
+          <tr>
+            <td><b>Title:</b></td>
+            <td>International Journal of Advances in Engineering Architecture Science and Technology</td>
+          </tr>
+          <tr>
+            <td><b>Frequency:</b>
+            <td> Monthly</td>
+          </tr>
+          <tr>
+            <td><b>ISSN:</b>
+            <td> 2583-7346</td>
+          </tr>
+          <tr>
+            <td><b>Publisher:</b>
+            <td> Dr. John T Mesia Dhas</td>
+          </tr>
+          <tr>
+            <td><b>Chief Editor:</b>
+            <td> Dr. John T Mesia Dhas</td>
+          </tr>
+          <tr>
+            <td><b>Copyright:</b>
+            <td> Dr. John T Mesia Dhas</td>
+          </tr>
+          <tr>
+            <td><b>Starting Year:</b>
+            <td> 2023</td>
+          </tr>
+          <tr>
+            <td><b>Subject:</b>
+            <td> Multi-Disciplinary Subject</td>
+          </tr>
+          <tr>
+            <td><b>Language:</b>
+            <td> English</td>
+          </tr>
+          <tr>
+            <td><b>Publication Format:</b>
+            <td> Online</td>
+          </tr>
+          <tr>
+            <td><b>Phone Number:</b>
+            <td> +91 9962415362</td>
+          </tr>
+          <tr>
+            <td><b>Email Id:</b>
+            <td> mail2ijaeast@gmail.com</td>
+          </tr>
+          <tr>
+            <td><b>Mobile Number:</b>
+            <td> +91 9962415362</td>
+          </tr>
+          <tr>
+            <td><b>Website:</b>
+            <td><a href="www.ijaeast.com"> www.ijaeast.com</a></td>
+          </tr>
+          <tr>
+            <td><b>Address:</b>
+            <td> M152, SBIOA Unity Enclave, Mambakkam, Chennai – 600127, Tamil Nadu, India</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="ija-quarter">
+        <p class="ija-large ija-center ija-yellow ija-hover-shadow" style="margin-left: 3px;margin-right: 3px;">
+          <b>Audience</b></p>
+        <p class="ija-justify" style="margin:10px">The journal is addressed to both practicing professionals and
+          researchers in the field of engineering, architecture, science and technology, professionals in academia,
+          former researchers, students and other specialists interested in the results of scientific research and
+          related subjects covered by the journal.</p>
+      </div>
+
+      <div class="ija-quarter">
+        <p class="ija-large ija-center ija-yellow ija-hover-shadow" style="margin-left: 3px;margin-right: 3px;"><b>Peer
+            Review Policy</b> </p>
+        <p class="ija-justify" style="margin:10px">Manuscripts submitted to the International Journal of Advances in
+          Engineering Architecture Science and Technology are approved by the Editor-in-chief followed by formal peer
+          review process conducted in collaboration with editorial board members and independent referees.</p>
+      </div>
+
+      <div class="ija-quarter">
+        <p class="ija-large ija-center ija-yellow ija-hover-shadow" style="margin-left: 3px;margin-right: 3px;"><b>Peer
+            Review Process</b></p>
+        <p class="ija-justify" style="margin:10px">Submissions to the International Journal of Advances in Engineering
+          Architecture Science and Technology passes through a double-blind peer-review process. The criteria for
+          publication in International Journal of Advances in Engineering Architecture Science and Technology are as
+          follows:</p>
+        <p>
+        <ul>
+          <li>The study presents the results of primary scholarly research.</li>
+          <li>Results reported have not been published elsewhere.</li>
+          <li>The research meets all applicable standards of ethics and research integrity.</li>
+          <li>Experiments, statistics, and other analyses are performed to a high technical standard and are described
+            in sufficient detail.</li>
+          <li>Conclusions are presented in an appropriate fashion and are supported by the data.</li>
+          <li>The article is presented in an intelligible fashion and is written in standard English.</li>
+        </ul>
+        </p>
+        <p class="ija-justify" style="margin:10px">Once the manuscripts have passed quality control, they are assigned
+          to a member of the Editorial Board (or an expert who is not a member of the Board) for conducting the
+          peer-review process and for making a decision to accept, invite revision of, or reject the article..</p>
+        <p class="ija-justify" style="margin:10px">International Journal of Advances in Engineering Architecture Science
+          and Technology</p>
+        <p class="ija-justify" style="margin:10px"><b>Chief Editor :</b> Prof. John T Mesia Dhas Ph.D</p>
+        <p class="ija-justify" style="margin:10px"><b>Online ISSN :</b> 2583-7346</p>
+        <p class="ija-justify" style="margin:10px"><b>Frequency :</b> Monthly</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- JOURNAL INDEXINGS -->
+  <div class="ija-container ija-light-grey" style="padding:50px 16px" id="index">
+    <h3 class="ija-center ija-yellow ija-hover-opacity" style="margin-top: 5%;">JOURNAL INDEXINGS</h3>
+    <div class="ija-row-padding" style="margin-top:20px">
+      <div class="ija-col l2 m6 ija-margin-bottom">
+        <div class="ija-card ija-center ija-white ">
+          <img src="https://ijaeast.com/gs-logo.png" alt="Google Scholar" style="width:30%;margin-top: 20px;">
+          <div class="ija-container">
+            <h6><a href="https://scholar.google.com/citations?user=NNVchRQAAAAJ&hl=en" target="_blank">Google
+                Scholar</a></h6>
+          </div>
+        </div>
+      </div>
+      <div class="ija-col l2 m6 ija-margin-bottom">
+        <div class="ija-card ija-center ija-white ">
+          <img src="https://ijaeast.com/citefactor_logo.png" alt="CiteFactor" style="width:30%;margin-top: 20px;">
+          <div class="ija-container">
+            <h6><a
+                href="https://www.citefactor.org/journal/index/31116/international-journal-of-advances-in-engineering-architecture-science-and-technology"
+                target="_blank">CiteFactor</a></h6>
+          </div>
+        </div>
+      </div>
+      <div class="ija-col m2 ija-margin-bottom">
+        <div class="ija-card ija-center ija-white">
+          <img src="https://ijaeast.com/researchGateLogo.png" alt="Research Gate" style="width:30%;margin-top: 20px;">
+          <div class="ija-container">
+            <h6><a
+                href="https://www.researchgate.net/profile/International-Journal-Of-Advances-In-Engineering-Architecture-Science-And-Technology"
+                target="_blank">Research Gate</a></h6>
+          </div>
+        </div>
+      </div>
+      <div class="ija-col l2 m6 ija-margin-bottom">
+        <div class="ija-card ija-center ija-white">
+          <img src="https://ijaeast.com/logodoi.png" alt="Digital Online Identifier"
+            style="width:30%;margin-top: 20px;">
+          <div class="ija-container">
+            <h6><a href="https://doi-ds.org/login/" target="_blank">DOI</a></h6>
+          </div>
+        </div>
+      </div>
+      <div class="ija-col l2 m6 ija-margin-bottom">
+        <div class="ija-card ija-center ija-white">
+          <img src="https://ijaeast.com/ia.png" alt="Internet Archieves" style="width:30%;margin-top: 20px;">
+          <div class="ija-container">
+            <h6><a
+                href="https://archive.org/details/@international_journal_of_advances_in_engineering_architecture_science_and_techn"
+                target="_blank">Internet Archieves</a></h6>
+          </div>
+        </div>
+      </div>
+      <div class="ija-col l2 m6 ija-margin-bottom">
+        <div class="ija-card ija-center ija-white">
+          <img src="https://ijaeast.com/iiwj.png" alt="Index Copernicus" style="width:30%;margin-top: 20px;">
+          <div class="ija-container">
+            <h6><a href="https://journals.indexcopernicus.com/app/auth/login" target="_blank">Index Copernicus</a></h6>
+          </div>
+        </div>
+      </div>
+      <div class="ija-col l2 m6 ija-margin-bottom">
+        <div class="ija-card ija-center ija-white">
+          <img src="https://ijaeast.com/oaji.png" alt="OAJI" style="width:30%;margin-top: 20px;">
+          <div class="ija-container">
+            <h6><a href="https://oaji.net/" target="_blank">OAJI</a></h6>
+          </div>
+        </div>
+      </div>
+      <div class="ija-col l2 m6 ija-margin-bottom">
+        <div class="ija-card ija-center ija-white">
+          <img src="https://ijaeast.com/sindexs.png" alt="SIS" style="width:30%;margin-top: 20px;">
+          <div class="ija-container">
+            <h6><a href="https://www.sindexs.org/JournalList.aspx" target="_blank">SIS</a></h6>
+          </div>
+        </div>
+      </div>
+      <div class="ija-col l2 m6 ija-margin-bottom">
+        <div class="ija-card ija-center ija-white">
+          <img src="https://ijaeast.com/DRJI.png" alt="DRJI" style="width:30%;margin-top: 20px;">
+          <div class="ija-container">
+            <h6><a href="https://olddrji.lbp.world/JournalProfile.aspx?jid=2583-7346" target="_blank">DRJI</a></h6>
+          </div>
+        </div>
+      </div>
+      <div class="ija-col l2 m6 ija-margin-bottom">
+        <div class="ija-card ija-center ija-white">
+          <img src="https://ijaeast.com/DOAJ.png" alt="DOAJ" style="width:30%;margin-top: 20px;">
+          <div class="ija-container">
+            <h6><a
+                href="https://doaj.org/account/login?next=https%3A%2F%2Fdoaj.org%2Fpublisher%2F%3Fsource%3D%257B%2522query%2522%253A%257B%2522bool%2522%253A%257B%2522must%2522%253A%255B%257B%2522terms%2522%253A%257B%2522admin.application_status.exact%2522%253A%255B%2522revisions_required%2522%252C%2522pending%2522%252C%2522in%2520progress%2522%252C%2522completed%2522%252C%2522on%2520hold%2522%252C%2522ready%2522%252C%2522draft%2522%255D%257D%257D%255D%257D%257D%252C%2522size%2522%253A50%252C%2522sort%2522%253A%255B%257B%2522last_updated%2522%253A%257B%2522order%2522%253A%2522desc%2522%257D%257D%255D%252C%2522_source%2522%253A%257B%257D%252C%2522track_total_hits%2522%253Atrue%257D"
+                target="_blank">DOAJ</a></h6>
+          </div>
+        </div>
+      </div>
+      <div class="ija-col l2 m6 ija-margin-bottom">
+        <div class="ija-card ija-center ija-white">
+          <img src="https://ijaeast.com/Researcherid.png" alt="Web of Science Researcher"
+            style="width:30%;margin-top: 20px;">
+          <div class="ija-container">
+            <h6><a href="https://www.webofscience.com/wos/author/record/ISS-1502-2023" target="_blank">W.o Sci
+                Researcher</a></h6>
+          </div>
+        </div>
+      </div>
+      <div class="ija-col l2 m6 ija-margin-bottom">
+        <div class="ija-card ija-center ija-white">
+          <img src="https://ijaeast.com/ID.png" alt="ORCID" style="width:30%;margin-top: 20px;">
+          <div class="ija-container">
+            <h6><a href="https://orcid.org/0009-0005-2217-7653" target="_blank">ORCID</a></h6>
+          </div>
+        </div>
+      </div>
+      <div class="ija-col l2 m6 ija-margin-bottom">
+        <div class="ija-card ija-center ija-white">
+          <img src="https://ijaeast.com/journalTOCS.png" alt="JournalTOCs" style="width:30%;margin-top: 20px;">
+          <div class="ija-container">
+            <h6><a href="https://www.journaltocs.ac.uk/" target="_blank">JournalTOCs</a></h6>
+          </div>
+        </div>
+      </div>
+      <div class="ija-col l2 m6 ija-margin-bottom">
+        <div class="ija-card ija-center ija-white">
+          <img src="https://ijaeast.com/Academia.png" alt="Academia" style="width:30%;margin-top: 20px;">
+          <div class="ija-container">
+            <h6><a href="https://independent.academia.edu/IJAEAST" target="_blank">Academia</a></h6>
+          </div>
+        </div>
+      </div>
+      <div class="ija-col l2 m6 ija-margin-bottom">
+        <div class="ija-card ija-center ija-white">
+          <img src="https://ijaeast.com/ezb.png" alt="EZB" style="width:30%;margin-top: 20px;">
+          <div class="ija-container">
+            <h6><a href="https://independent.academia.edu/IJAEAST" target="_blank">EZB</a></h6>
+          </div>
+        </div>
+      </div>
+      <div class="ija-col l2 m6 ija-margin-bottom">
+        <div class="ija-card ija-center ija-white">
+          <img src="https://ijaeast.com/ESJIndex.png" alt="Eurasian Scientific Journal Index"
+            style="width:30%;margin-top: 20px;">
+          <div class="ija-container">
+            <h6><a href="https://esjindex.org/search.php?id=6619" target="_blank">ESJI</a></h6>
+          </div>
+        </div>
+      </div>
+      <div class="ija-col l2 m6 ija-margin-bottom">
+        <div class="ija-card ija-center ija-white">
+          <img src="https://ijaeast.com/WorldCat.png" alt="WorldCat" style="width:30%;margin-top: 20px;">
+          <div class="ija-container">
+            <h6><a href="https://www.worldcat.org/user/account" target="_blank">WorldCat</a></h6>
+          </div>
+        </div>
+      </div>
+      <div class="ija-col l2 m6 ija-margin-bottom">
+        <div class="ija-card ija-center ija-white">
+          <img src="https://ijaeast.com/1library.net.png" alt="1Library" style="width:30%;margin-top: 20px;">
+          <div class="ija-container">
+            <h6><a href="https://1library.net/auth/v1/login" target="_blank">
+                <font style="font-family: 'Times New Roman', Times, serif;">1</font>Library</a></h6>
+          </div>
+        </div>
+      </div>
+      <div class="ija-col l2 m6 ija-margin-bottom">
+        <div class="ija-card ija-center ija-white">
+          <img src="https://ijaeast.com/infobaseindex.png" alt="Infobase Index" style="width:30%;margin-top: 20px;">
+          <div class="ija-container">
+            <h6><a href="https://www.infobaseindex.com/" target="_blank">Infobase Index</a></h6>
+          </div>
+        </div>
+      </div>
+      <div class="ija-col l2 m6 ija-margin-bottom">
+        <div class="ija-card ija-center ija-white">
+          <img src="https://ijaeast.com/BASE.png" alt="BASE" style="width:30%;margin-top: 20px;">
+          <div class="ija-container">
+            <h6><a href="https://www.base-search.net/MyResearch/Home?cookieErr=1" target="_blank">BASE</a></h6>
+          </div>
+        </div>
+      </div>
+      <div class="ija-col l2 m6 ija-margin-bottom">
+        <div class="ija-card ija-center ija-white">
+          <img src="https://ijaeast.com/ASJR.png" alt="ASJR" style="width:30%;margin-top: 20px;">
+          <div class="ija-container">
+            <h6><a href="https://www.journal-metrics.com/index.php" target="_blank">ASJR</a></h6>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+  <!-- Promo Section "Statistics" 
+<div class="ija-container ija-row ija-center ija-dark-grey ija-padding-64">
+  <div class="ija-quarter">
+    <span class="ija-xxlarge">14+</span>
+    <br>Partners
+  </div>
+  <div class="ija-quarter">
+    <span class="ija-xxlarge">55+</span>
+    <br>Projects Done
+  </div>
+  <div class="ija-quarter">
+    <span class="ija-xxlarge">89+</span>
+    <br>Happy Clients
+  </div>
+  <div class="ija-quarter">
+    <span class="ija-xxlarge">150+</span>
+    <br>Meetings
+  </div>
+</div>-->
+
+  <!-- Author Guidelines -->
+  <div class="ija-container" style="padding:128px 16px" id="guide">
+    <h3 class="ija-center ija-yellow ija-hover-opacity">Author Guidelines</h3>
+    <div style="margin-bottom: -10px;">
+      <img src="https://ijaeast.com/guide.png" style="width: 5%;height: 5%;">
+      <img src="https://ijaeast.com/guide.png" style="width: 5%;height: 5%;">
+      <img src="https://ijaeast.com/guide.png" style="width: 5%;height: 5%;">
+      <img src="https://ijaeast.com/guide.png" style="width: 5%;height: 5%;">
+      <img src="https://ijaeast.com/guide.png" style="width: 5%;height: 5%;">
+      <img src="https://ijaeast.com/guide.png" style="width: 5%;height: 5%;">
+      <img src="https://ijaeast.com/guide.png" style="width: 5%;height: 5%;">
+      <img src="https://ijaeast.com/guide.png" style="width: 5%;height: 5%;">
+      <img src="https://ijaeast.com/guide.png" style="width: 5%;height: 5%;">
+      <img src="https://ijaeast.com/guide.png" style="width: 5%;height: 5%;">
+      <img src="https://ijaeast.com/guide.png" style="width: 5%;height: 5%;">
+      <img src="https://ijaeast.com/guide.png" style="width: 5%;height: 5%;">
+      <img src="https://ijaeast.com/guide.png" style="width: 5%;height: 5%;">
+      <img src="https://ijaeast.com/guide.png" style="width: 5%;height: 5%;">
+      <img src="https://ijaeast.com/guide.png" style="width: 5%;height: 5%;">
+      <img src="https://ijaeast.com/guide.png" style="width: 5%;height: 5%;">
+      <img src="https://ijaeast.com/guide.png" style="width: 5%;height: 5%;">
+      <img src="https://ijaeast.com/guide.png" style="width: 5%;height: 5%;">
+      <img src="https://ijaeast.com/guide.png" style="width: 5%;height: 5%;">
+    </div>
+    <div class="ija-row-padding" style="margin-top:64px">
+      <div class="ija-center">
+        <iframe src="https://ijaeast.com/AUTHOR_GUIDELINES.pdf" type="application/pdf" width="100%" height="1000px"></iframe>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ARTICLE SUBMISSION -->
+  <div class="ija-container ija-light-grey ija-padding-64" id="submission">
+    <div class="ija-row-padding">
+      <div class="ija-center ija-yellow ija-hover-opacity" style="margin-top: 5%;">
+        <h3>ARTICLE SUBMISSION</h3>
+      </div>
+      <div class="ija-center ija-font" style="margin-top: 15%;">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfss45WQy1n81K2C6sTZTfDbiqAVPoi7KphXab7xTcvdtpRQQ/viewform"
+          target="_blank" style="margin: 5%;">Register / Submit Abstract</a>
+        <a href="https://ijaeast.com/Article_Template.docx" style="margin: 5%;">Article Template </a>
+        <a href="https://www.ijaeast.com/CopyRightForm.pdf" target="_blank" style="margin: 5%;">Copyright Form</a>
+      </div>
+      <div class="ija-center">
+        <h3 style="text-decoration: underline;margin-top: 20%;">(Kindly send the full research article to the email
+          address: <b>mail2ijaeast@gmail.com</b>)</h3>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- Editorial Board -->
+  <div class="ija-container ija-center ija-dark-grey" style="padding:128px 16px" id="editorial">
+    <h3 class="ija-yellow ija-hover-opacity">Editorial Board</h3>
+    <div class="ija-third ija-section ija-center" style="margin-top:64px;width: 100%;">
+      <ul class="ija-ul ija-white ija-hover-shadow">
+        <iframe src="https://ijaeast.com/ebm.pdf" type="application/pdf" width="100%" height="1000px"></iframe>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Publication Policy -->
+  <div class="ija-container" style="padding:128px 16px" id="policy">
+    <h3 class="ija-center ija-yellow ija-hover-opacity">Publication Policy</h3>
+    <div class="ija-row-padding" style="margin-top:64px">
+      <div class="ija-center">
+        <iframe src="https://www.ijaeast.com/PublicationPolicy.pdf" type="application/pdf" width="100%"
+          height="1000px"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- PUBLISHED BOOKS -->
+  <div class="ija-container ija-grey" style="padding:50px 16px" id="books">
+    <h3 class="ija-center ija-yellow ija-hover-opacity" style="margin-top: 5%;">PUBLISHED BOOKS</h3>
+    <div class="ija-row-padding" style="margin-top:20px;color: #fff;margin-bottom: 15%;">
+      <p> <img src="https://ijaeast.com/book.png" style="width: 15px;height: 15px;"> <a
+          href="https://www.ijaeast.com/C%20Logic%20Programming.pdf" target="_blank"><b>C LOGIC PROGRAMMING</b></a><i>-
+          John T Mesia Dhas, T S Shiny Angel</i></p>
+      <p> <img src="https://ijaeast.com/book.png" style="width: 15px;height: 15px;"><a
+          href="https://www.ijaeast.com/AAD%20-%20Book.pdf" target="_blank"><b>ANDROID APPLICATIONS DEVELOPMENT
+            PRACTICAL APPROACH</b></a><i>- John T Mesia Dhas, S. Naveen Kumar, D. Surendra</i></p>
+      <p> <img src="https://ijaeast.com/book.png" style="width: 15px;height: 15px;"> <a
+          href="https://www.ijaeast.com/DBMS%20Practical%20Programs.pdf" target="_blank"><b>DBMS PRACTICAL
+            PROGRAMS</b></a><i>- John T Mesia Dhas, T S Shiny Angel</i></p>
+      <p> <img src="https://ijaeast.com/book.png" style="width: 15px;height: 15px;"> <a
+          href="https://www.ijaeast.com/Modern%20Metrics(MM).pdf" target="_blank"><b>Modern Metrics (MM): The Functional
+            Size Estimator for ModernSoftware</b></a><i>- John T Mesia Dhas, T S Shiny Angel</i></p>
+      <p> <img src="https://ijaeast.com/book.png" style="width: 15px;height: 15px;"> <a
+          href="https://www.ijaeast.com/Introduction%20to%20Big%20Data%20Analytics.pdf" target="_blank"><b>INTRODUCTION
+            TO BIG DATA ANALYTICS</b></a><i>- John T Mesia Dhas, T S Shiny Angel, Adarsh T K</i></p>
+      <p> <img src="https://ijaeast.com/book.png" style="width: 15px;height: 15px;"> <a
+          href="https://www.ijaeast.com/PYTHON%203.7.1%20Book.pdf" target="_blank"><b>PYTHON 3.7.1 Vol - I </b></a><i>-
+          John T Mesia Dhas, T S Shiny Angel</i></p>
+      <p> <img src="https://ijaeast.com/book.png" style="width: 15px;height: 15px;"> <a
+          href="https://www.ijaeast.com/Step%20by%20step%20approaches%20for%20Indian%20Patent.pdf"
+          target="_blank"><b>STEP BY STEP APPROACH FOR INDIAN PATENT</b></a><i>- Adarsh T K, John T Mesia Dhas</i></p>
+      <p> <img src="https://ijaeast.com/book.png" style="width: 15px;height: 15px;"> <a
+          href="https://www.ijaeast.com/MAD%20Book.pdf" target="_blank"><b>MOBILE APPLICATIONS DEVELOPMENT</b></a><i>-
+          John T Mesia Dhas, T S Shiny Angel</i></p>
+      <p> <img src="https://ijaeast.com/book.png" style="width: 15px;height: 15px;"> <a
+          href="https://www.ijaeast.com/SOFTWARE%20SIZING%20Approaches.pdf" target="_blank"><b>SOFTWARE SIZING
+            APPROACHES</b></a><i>- T S Shiny Angel, John T Mesia Dhas</i></p>
+      <p> <img src="https://ijaeast.com/book.png" style="width: 15px;height: 15px;"> <a
+          href="https://www.ijaeast.com/XML%20Hand%20Book.pdf" target="_blank"><b>XML Hand Book</b></a><i>- John T Mesia
+          Dhas, T S Shiny Angel</i></p>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="ija-container ija-light-grey" style="padding:80px 16px" id="contact">
+    <h3 class="ija-center ija-yellow ija-hover-opacity" style="margin-top: 5%;">CONTACT US</h3>
+    <p class="ija-center ija-large"><b>EDITOR-IN-CHIEF</b></p>
+    <div class="ija-center" style="margin-bottom: 15%;">
+      <p class="ija-xlarge">
+        <b>Dr. John T Mesia Dhas</b><br>
+        Associate Professor,<br>
+        Department of Computer Science & Engineering,<br>
+        Head, Research & Development Cell,<br>
+        T. John Institute of Technology, Bangalore – 560083, India.<br>
+        <b>Address :</b> M152, SBIOA Unity Enclave, Mambakkam, Chennai – 600127, Tamil Nadu, India.<br>
+        <b>Email :</b> mail2ijaeast@gmail.com<br>
+        <b>Mobile :</b> +91 9962415362<br>
+        <b>Website :</b> <a href="https://www.ijaeast.com/" target="_blank"> www.ijaeast.com</a><br>
+      </p>
+    </div>
+  </div>
+  <!-- PUBLISHED ISSUES -->
+  <div class="ija-container ija-grey" style="padding:50px 16px" id="archives">
+    <h3 class="ija-center ija-yellow ija-hover-opacity" style="margin-top: 5%;">PUBLISHED ISSUES</h3>
+    <p class="ija-center ija-large"><b>CURRENT ISSUE</b></p>
+    <div class="ija-col l3 m6" style="margin-top:20px;color: #fff;">
+      <div class="dropdown" style="margin-left: 20%;">
+        <button class="dropbtn mybutton" style="padding: -50px;border-radius: 10px;">Volume - 1</button>
+        <div class="dropdown-content">
+          <a href="v1-issue4.pdf" target="_blank" onclick="volume1_i4()" >Issue – 4, July 2023 - <span class="ija-opacity"> Views: <span id="issue4"></span></span> </a>
+          <a href="v1-issue3.pdf" target="_blank" onclick="volume1_i3()" >Issue – 3, June 2023 - <span class="ija-opacity"> Views: <span id="issue3"></span></span> </a>
+          <a href="v1-issue2.pdf" target="_blank" onclick="volume1_i2()" >Issue – 2, May 2023 - <span class="ija-opacity"> Views: <span id="issue2"></span></span> </a>
+          <a href="v1-issue1.pdf" target="_blank" onclick="volume1_i1()" >Issue – 1, April 2023 -<span class="ija-opacity"> Views: <span id="issue1"></span></span></a> 
+        </div>
+      </div>
+    </div>
+    <div class="ija-col m7">
+      <!--Issue 1-->
+      <div class="ija-container ija-card ija-white ija-round ija-margin"><br>
+        <span class="ija-right ija-opacity">Volume - 1, Issue – 5, August 2023, Page No. 1-11</span>
+        <h4>Authors</h4>
+        <h6>Chetan Bagaria, R. Nirmala</h6><br>
+        <h4>Paper Title</h4>
+        <h6><a href="https://www.ijaeast.com/IJAEAST_0001082023.pdf" target="_blank" onclick="clickCounter1()">Mindfulness and Sustainable Tourism
+            – An Integrative Review</a></h6>
+            <span class="ija-right ija-opacity">Views: <span id="post1"></span></span><br>
+            
+      </div>
+
+
+    </div>
+  </div>
+
+  </div>
+  <!-- Footer -->
+  <footer class="ija-center ija-mygreen ija-container">
+    <div class="ija-margin-top">
+
+      <div class="ija-col l2 m4 ija-center">
+        <ul style="list-style-type: none;">
+          <li><a href="#about" class="ija-bar-item ija-button">About Journal</a></li>
+          <li><a href="#index" class="ija-bar-item ija-button">Journal Indexing</a></li>
+          <li><a href="#guide" class="ija-bar-item ija-button">Author Guidelines</a></li>
+          <li><a href="#submission" class="ija-bar-item ija-button">Article Submission</a></li>
+        </ul>
+      </div>
+      <div class="ija-col l2 m4 ija-center">
+        <ul style="list-style-type: none;">
+          <li><a href="#editorial" onclick="ija_close()" class="ija-bar-item ija-button">Editorial Board</a></li>
+          <li><a href="#policy" onclick="ija_close()" class="ija-bar-item ija-button">Publication Policy</a></li>
+          <li><a href="#books" onclick="ija_close()" class="ija-bar-item ija-button">Books</a></li>
+          <li><a href="#archives" onclick="ija_close()" class="ija-bar-item ija-button">Archives</a></li>
+        </ul>
+      </div>
+
+      <div class=" ija-col l2 m4 ija-left-align ija-margin-top">
+        <a href="https://portal.issn.org/resource/ISSN/2583-7346" target="_blank"><img src="https://ijaeast.com/issn.jpg"
+            style="width: 30%;height: 30%;margin-bottom: 2%;margin-right: 2%;"></a><b
+          style="font-family: 'Times New Roman', Times, serif;font-size: xx-large;">: 2583-7346</b>
+        <div class="ija-center"> <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><img
+              src="https://ijaeast.com/cc.png" style="width: 50%;height: 50%;margin: 2%;"></a></div>
+
+      </div>
+      
+      <div class=" ija-col l2 m4">
+        <div class="ija-xlarge ija-section ija-large">
+          <p class="ija-center ija-xlarge"
+            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+            Follow Us</p>
+          <a href=""><i class="fa fa-facebook-official ija-hover-opacity"></i></a>
+          <a href=""><i class="fa fa-instagram ija-hover-opacity"></i></a>
+          <a href=""><i class="fa fa-snapchat ija-hover-opacity"></i></a>
+          <a href=""><i class="fa fa-pinterest-p ija-hover-opacity"></i></a>
+          <a href=""><i class="fa fa-twitter ija-hover-opacity"></i></a>
+          <a href=""><i class="fa fa-linkedin ija-hover-opacity"></i></a>
+        </div>
+      </div>
+
+      <div class=" ija-col l2 m4 ija-margin-top">
+        <a href="#home" class="ija-button ija-light-grey">To the top</a>
+        <p>@Copyright IJEAST</p>
+      </div>
+      <div class=" ija-col l2 m4" >
+        <a href="https://smaneeedesign.wordpress.com/" target="_blank"><img class="imga" src="https://ijaeast.com/design-logo.png" style="width: 30%;height: 30%;"></a>
+        <p style="margin-top: 1%;">Designed By</p>
+        </div>
+      </div>
+
+    </div>
+    </div>
+    <div class="ija-right-align" style="margin-top: -1.5%;">
+      <a href='https://acadooghostwriter.com/'></a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=cab09ca02274d58fe671b8b50a0e08c3208708a2'></script>
+      <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1063276/t/2"></script>
+    </div>
+ 
+  </footer>
+
+  <script>
+
+
+
+    // Toggle between showing and hiding the sidebar when clicking the menu icon
+    var mySidebar = document.getElementById("mySidebar");
+
+    function ija_open() {
+      if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+      } else {
+        mySidebar.style.display = 'block';
+      }
+    }
+
+    // Close the sidebar with the close button
+    function ija_close() {
+      mySidebar.style.display = "none";
+    }
+  </script>
+
+  <!--Current Issue-->
+  <script>
+    function clickCounter() {
+      if (typeof(Storage) !== "undefined") {
+        if (sessionStorage.clickpost) {
+          sessionStorage.clickpost = Number(sessionStorage.clickpost)+1;
+        } else {
+          sessionStorage.clickpost = 1;
+        }
+        document.getElementById("post").innerHTML = sessionStorage.clickpost;
+      } else {
+        document.getElementById("post").innerHTML = "Sorry, your browser does not support web storage...";
+      }
+    }
+    </script>
+    <!--Published Issue-->
+     <script>
+      function clickCounter1() {
+        if (typeof(Storage) !== "undefined") {
+          if (sessionStorage.clickpost1) {
+            sessionStorage.clickpost1 = Number(sessionStorage.clickpost1)+1;
+          } else {
+            sessionStorage.clickpost1 = 1;
+          }
+          document.getElementById("post1").innerHTML = sessionStorage.clickpost1;
+        } else {
+          document.getElementById("post1").innerHTML = "Sorry, your browser does not support web storage...";
+        }
+      }
+      </script>
+
+<!--Volume-->
+     <script>
+      function volume1_i1() {
+        if (typeof(Storage) !== "undefined") {
+          if (sessionStorage.v1i1) {
+            sessionStorage.v1i1 = Number(sessionStorage.v1i1)+1;
+          } else {
+            sessionStorage.v1i1 = 1;
+          }
+          document.getElementById("issue1").innerHTML = sessionStorage.v1i1;
+        } else {
+          document.getElementById("issue1").innerHTML = "Sorry, your browser does not support web storage...";
+        }
+      }
+      </script>
+ <script>
+  function volume1_i2() {
+    if (typeof(Storage) !== "undefined") {
+      if (sessionStorage.v1i2) {
+        sessionStorage.v1i2 = Number(sessionStorage.v1i2)+1;
+      } else {
+        sessionStorage.v1i2 = 1;
+      }
+      document.getElementById("issue2").innerHTML = sessionStorage.v1i2;
+    } else {
+      document.getElementById("issue2").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+  }
+  </script>
+ <script>
+  function volume1_i3() {
+    if (typeof(Storage) !== "undefined") {
+      if (sessionStorage.v1i3) {
+        sessionStorage.v1i3 = Number(sessionStorage.v1i3)+1;
+      } else {
+        sessionStorage.v1i3 = 1;
+      }
+      document.getElementById("issue3").innerHTML = sessionStorage.v1i3;
+    } else {
+      document.getElementById("issue3").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+  }
+  </script>
+   <script>
+    function volume1_i4() {
+      if (typeof(Storage) !== "undefined") {
+        if (sessionStorage.v1i4) {
+          sessionStorage.v1i4 = Number(sessionStorage.v1i4)+1;
+        } else {
+          sessionStorage.v1i4 = 1;
+        }
+        document.getElementById("issue4").innerHTML = sessionStorage.v1i4;
+      } else {
+        document.getElementById("issue4").innerHTML = "Sorry, your browser does not support web storage...";
+      }
+    }
+    </script>
+
+</body>
+
+</html>

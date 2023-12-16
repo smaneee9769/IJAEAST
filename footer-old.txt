@@ -1,0 +1,18 @@
+<footer class="ija-center ija-mygreen ija-padding-16">
+  <div class=" ija-col l2 m4" style="margin-bottom: 10%;">
+    <a href="https://smaneeedesign.wordpress.com/"><img class="imga" src="https://ijaeast.com/design-logo.png" style="width: 30%;height: 30%;"></a>
+    <p style="margin-top: -2%;">Designed By</p>
+    </div>
+
+  <div class=" ija-col l3 m6" style="margin-bottom: 10%;margin-top: 1%;">
+  <a href="https://www.ijaeast.com/ISSN.pdf"><img src="https://ijaeast.com/issn.jpg" style="width: 30%;height: 30%;"><b style="font-family: 'Times New Roman', Times, serif;">: 2583-7346</b></a>
+  <a href="https://creativecommons.org/licenses/by/4.0/"><img src="https://ijaeast.com/cc.png" style="width: 30%;height: 30%;"></a>
+  </div>
+  <div class=" ija-col l3 m6" style="margin-bottom: 10%;margin-top: -1%;">
+    <p>The aim of the International Journal of Advances in Engineering Architecture Science and Technology is to be a knowledge platform addressing research and innovation, experimental developments, etc.</p>
+    </div>
+<div >
+  <a href="#home" class="ija-button ija-light-grey">To the top</a>
+  <p>@Copyright IJEAST</p>
+</div>
+</footer>
